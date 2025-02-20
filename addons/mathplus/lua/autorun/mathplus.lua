@@ -162,6 +162,10 @@ function MathUtils.VectorDivide(a, b, result)
     result[3] = a[3] / b[3]
 end
 
+-- New --
+function MathUtils.IsVectorZero(vec)
+    return vec[1] == 0 and vec[2] == 0 and vec[3] == 0
+end
 
 print("MathUtils | Loaded successfully.")
 return MathUtils
