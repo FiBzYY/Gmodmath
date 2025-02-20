@@ -17,7 +17,7 @@ MathPlus is a powerful math utility library designed to simplify vector and angl
 
 ### Download or clone this repository:
 ```bash
-git clone https://github.com/FiBzY/MathPlus.git
+git clone https://github.com/FiBzY/Gmodmath.git
 ```
 
 ### Place the folder into your GMod addons directory:
