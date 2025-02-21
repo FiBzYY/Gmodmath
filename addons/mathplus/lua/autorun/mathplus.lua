@@ -167,5 +167,9 @@ function MathUtils.IsVectorZero(vec)
     return vec[1] == 0 and vec[2] == 0 and vec[3] == 0
 end
 
+function MathUtils.SimpleSpline(value)
+    return value * value * (3 - 2 * value)
+end
+
 print("MathUtils | Loaded successfully.")
 return MathUtils
