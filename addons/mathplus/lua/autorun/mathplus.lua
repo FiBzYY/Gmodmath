@@ -171,5 +171,29 @@ function MathUtils.SimpleSpline(value)
     return value * value * (3 - 2 * value)
 end
 
+function MathUtils.ClipVelocity(input, normal, out, overbounce)
+    local blocked = 0x00
+    local angle = normal[3]
+
+    if angle > 0 then blocked = bit.bor(blocked, 0x01) end  -- 1 Floor
+    if angle == 0 then blocked = bit.bor(blocked, 0x02) end -- 2 Wall Step
+
+    local backoff = MathUtils.DotProduct(input, normal) * overbounce
+
+    for i = 1, 3 do
+        local change = normal[i] * backoff
+        out[i] = input[i] - change
+    end
+
+    local adjust = MathUtils.DotProduct(out, normal)
+    if adjust < 0.0 then
+        for i = 1, 3 do
+            out[i] = out[i] - normal[i] * adjust
+        end
+    end
+
+    return blocked
+end
+
 print("MathUtils | Loaded successfully.")
 return MathUtils
