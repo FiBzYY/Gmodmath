@@ -11,11 +11,11 @@ function MathUtils.GetVectorLength(v)
 end
 
 function MathUtils.VectorClone(vec)
-    return {vec[1], vec[2], vec[3]}
+    return vec[1], vec[2], vec[3]
 end
 
 function MathUtils.VectorScale(vec, scale)
-    return {vec[1] * scale, vec[2] * scale, vec[3] * scale}
+    return vec[1] * scale, vec[2] * scale, vec[3] * scale
 end
 
 function MathUtils.DotProduct(vec1, vec2)
