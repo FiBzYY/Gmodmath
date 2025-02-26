@@ -74,7 +74,7 @@ function MathUtils.VectorCopy(fromVec, toVec)
 end
 
 function MathUtils.VectorToArray(vec)
-    return {vec[1], vec[2], vec[3]}
+    return vec[1], vec[2], vec[3]
 end
 
 function MathUtils.IsEqual(a, b)
@@ -131,19 +131,15 @@ function MathUtils.VectorAdd(a, b, result)
 end
 
 function MathUtils.CrossProduct(a, b)
-    return {
-        a[2] * b[3] - a[3] * b[2],
-        a[3] * b[1] - a[1] * b[3],
-        a[1] * b[2] - a[2] * b[1]
-    }
+    return a[2] * b[3] - a[3] * b[2],
+           a[3] * b[1] - a[1] * b[3],
+           a[1] * b[2] - a[2] * b[1]
 end
 
 function MathUtils.RandomVector(minVal, maxVal)
-    return {
-        math.random() * (maxVal - minVal) + minVal,
+    return math.random() * (maxVal - minVal) + minVal,
         math.random() * (maxVal - minVal) + minVal,
         math.random() * (maxVal - minVal) + minVal
-    }
 end
 
 function MathUtils.VectorMultiply(a, b, result)
